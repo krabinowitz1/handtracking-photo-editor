@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <script src="https://cdn.jsdelivr.net/npm/handtrackjs/dist/handtrack.min.js"> </script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8" />
+
+  </head>
+  <body>
+     <div class="mb10">
+    <button onclick="toggleVideo()" id="trackbutton" class="bx--btn bx--btn--secondary" type="button">
+      Toggle Video
+    </button>
+    <div id="updatenote" class="updatenote mt10"> loading model ..</div>
+  </div>
+  <video hidden class="videobox canvasbox" autoplay="autoplay" id="myvideo"></video>
+
+  <canvas id="canvas" class="border canvasbox"></canvas>
+  <canvas id="canvas1"></canvas>
+  <div>
+    Upload a trailshot: <input type="file" name="pic" onchange="graphics.loadImage(this.files[0])" accept="image/*">
+    </div>
+    <div>
+    Intensity: <input type="range" min="1" max="100" value="100" onchange="graphics.setEffectIntensity(this.value); document.getElementById('intensity').innerHTML=this.value;" />
+    <span id="intensity">100</span>
+    </div>
+    <script src="liquify.js"></script>
+    <script src="sketch.js"></script>
+  </body>
+</html>
+
